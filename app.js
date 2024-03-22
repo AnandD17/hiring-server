@@ -26,6 +26,10 @@ import candidateRoutes from "./routes/candidateRoutes.js";
 // router middleware
 app.use("/api/v1/candidate", candidateRoutes);
 
+app.get("/", (req, res) => {
+  res.send("Hello World");
+});
+
 testDbConnection()
   .then(() => {
     console.log("Connected to PostgreSQL database");
