@@ -1,13 +1,23 @@
 import { Sequelize } from "sequelize";
-// Connection parameters
-// const sequelize = new Sequelize('database', 'username', 'password')
 
-// with URI
-export const sequelize = new Sequelize("dev", "root", "Doddamani@123", {
-  dialect: "postgres",
-  host: "SG-ionian-hide-6988-5227-pgsql-master.servers.mongodirector.com",
-  port: 5432,
-});
+// Connection parameters
+export const sequelize = new Sequelize(
+  "hire",
+  "hire_user",
+  "5ucse3AzEM8mHbQn5PMuL0JluNFHlwZ6",
+  {
+    dialect: "postgres",
+    host: "dpg-cnuo74qcn0vc73b7th4g-a.oregon-postgres.render.com",
+    port: 5432,
+    dialectOptions: {
+      ssl: {
+        require: true, // Require SSL/TLS encryption
+        rejectUnauthorized: false, // Don't reject connections with untrusted certificates
+      },
+    },
+  }
+);
+
 export const testDbConnection = async () => {
   try {
     await sequelize.authenticate();
